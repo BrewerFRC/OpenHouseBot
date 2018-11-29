@@ -1,4 +1,5 @@
-package org.usfirst.frc.team4564.robot;
+package frc.robot;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Supplier;

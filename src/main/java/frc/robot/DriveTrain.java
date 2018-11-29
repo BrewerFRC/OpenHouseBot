@@ -1,4 +1,4 @@
-package org.usfirst.frc.team4564.robot;
+package frc.robot;
 
 import edu.wpi.first.wpilibj.CounterBase.EncodingType;
 import edu.wpi.first.wpilibj.Encoder;
@@ -37,7 +37,7 @@ public class DriveTrain extends DifferentialDrive {
 			backR = new Spark(Constants.DRIVE_BR);
 	private static final SpeedControllerGroup left = new SpeedControllerGroup(frontL, backL);
 	private static final SpeedControllerGroup right = new SpeedControllerGroup(frontR, backR);
-	
+
 	private Encoder encoderL, encoderR;
 	private PID pidL, pidR;
 	private Heading heading;
@@ -58,11 +58,7 @@ public class DriveTrain extends DifferentialDrive {
 		encoderR = new Encoder(Constants.DRIVE_ENCODER_RA, Constants.DRIVE_ENCODER_RB, true, EncodingType.k4X);
 		encoderR.setDistancePerPulse(DISTANCE_PER_PULSE_R);
 		encoderR.setSamplesToAverage(10);
-		heading = new Heading();
-		shifter = new Solenoid(Constants.PCM_CAN_ID, Constants.SHIFTER);
-		
-		pidL = new PID(0.005, 0, 0, false, true, "velL");
-		pidR = new PID(0.005, 0, 0, false, true, "velR");
+		heading = new Heading();		
 		
 		instance = this;
 	}
